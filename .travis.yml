@@ -2,7 +2,7 @@ sudo: required
 services:
   - docker
 env:
-  -CI=true
+  - CI=true
 
 before_install:
   - docker build -t suveenkumarchowdary/docker-react -f Dockerfile.dev .
