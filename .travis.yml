@@ -1,9 +1,11 @@
 sudo: required
 services:
   - docker
+env:
+  -CI=true
 
 before_install:
   - docker build -t suveenkumarchowdary/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run suveenkumarchowdary/docker-react npm run test -- --coverage
+  - docker run suveenkumarchowdary/docker-react yarn test --ci
